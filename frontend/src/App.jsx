@@ -1,6 +1,6 @@
-import Home from "./pages/Home";
 import { useState } from "react";
 import "./App.css";
+import Home from "./pages/Home";
 
 function App() {
   const [fetchedData, setFetchedData] = useState(null);
@@ -26,7 +26,9 @@ function App() {
       {fetchedData &&
         fetchedData.hourly.time.map((hour, index) => (
           <p key={hour}>
-            heure :{hour} temp:{fetchedData.hourly.temperature_2m[index]}
+            Date : {hour.substr(0, 10)} <br />
+            Heure : {hour.substr(11, 5)} <br />
+            temp : {fetchedData.hourly.temperature_2m[index]} °C
           </p>
         ))}
     </div>
