@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import Home from "./pages/Home";
 
 function App() {
   const [fetchedData, setFetchedData] = useState(null);
@@ -17,12 +16,11 @@ function App() {
 
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
-
+      <br />
       <button type="button" onClick={fetchOneTime}>
-        click me
+        Cliquer ici pour afficher la date,l'heure et la météo
       </button>
+
       {fetchedData &&
         fetchedData.hourly.time.map((hour, index) => (
           <p key={hour}>

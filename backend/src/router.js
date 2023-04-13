@@ -5,7 +5,7 @@ const router = express.Router();
 const itemControllers = require("./controllers/itemControllers");
 
 router.get("/event-listings", (req, res) => {
-  res.json(list);
+  res.json();
 });
 
 router.get("/items", itemControllers.browse);

@@ -1,17 +1,10 @@
-import Counter from "../components/Counter";
 import logo from "../assets/logo.svg";
 
 export default function Home() {
   return (
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React !</p>
-
-      <Counter />
-
-      <p>
-        Edit <code>App.jsx</code> and save to test HMR updates.
-      </p>
+      <p>Courage !</p>
       <p>
         <a
           className="App-link"
