@@ -4,13 +4,15 @@ import Home from "./pages/Home";
 import "./App.css";
 
 function App() {
-  const [fetchedData, setFetchedData] = useState([]);
+  const [fetchEvents, setFetchEvents] = useState(null);
 
-  const fetchOneTime = () => {
-    fetch("http://localhost:5000/exitIdea")
-      .then((resp) => resp.json())
-      .then((data) => {
-        setFetchedData(data);
+  const fetchEvent = () => {
+    fetch(
+      "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records"
+    )
+      .then((response) => response.json())
+      .then((Events) => {
+        setFetchEvents(Events);
       });
   };
 
@@ -18,13 +20,14 @@ function App() {
     <div className="App">
       <Home />
       <p>coucou</p>
-      <button type="button" onClick={fetchOneTime}>
-        Click here
-      </button>
 
-      {fetchedData.map((exitIdea) => (
-        <p key={exitIdea.id}>{exitIdea.exit}</p>
-      ))}
+      <button type="button" onClick={fetchEvent}>
+        click me
+      </button>
+      {fetchEvents &&
+        fetchEvents.records.map((event) => (
+          <p key={event.record.id}>{event.record.fields.title_fr}</p>
+        ))}
     </div>
   );
 }

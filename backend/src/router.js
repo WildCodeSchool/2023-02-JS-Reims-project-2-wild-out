@@ -2,17 +2,12 @@ const express = require("express");
 
 const router = express.Router();
 
+const events = require("./data/events.json");
+
 const itemControllers = require("./controllers/itemControllers");
 
-const exitIdea = [
-  { id: 1, exit: "beach" },
-  { id: 2, exit: "opera" },
-  { id: 3, exit: "ballad" },
-  { id: 4, exit: "movie theater" },
-];
-
-router.get("/exitIdea", (req, res) => {
-  res.json(exitIdea);
+router.get("/events.json", (req, res) => {
+  res.json(events);
 });
 
 router.get("/items", itemControllers.browse);
