@@ -39,25 +39,25 @@ function App() {
       <button type="button" onClick={fetchOneTime}>
         Afficher les prévisions météo
       </button>
-      <figure className="meteo">
-        {todaysData &&
-          todaysData.slice(0, 1).map((hour) => (
-            <figcaption key={hour}>
-              <p>
-                Date : {hour.substr(0, 10)}
-                <br />
-                Heure : {hour.substr(11, 5)}
-                <br />
-                Température :{" "}
-                {
-                  fetchedData.hourly.temperature_2m[
-                    fetchedData.hourly.time.indexOf(hour)
-                  ]
-                }{" "}
-                °C
-                <br />
-                <div className="zoom d-flex justify-content-center">
-                  <div className="p-2 m-2">
+      <div className="zoom d-flex justify-content-center">
+        <div className="p-2 m-2">
+          <figure className="meteo">
+            {todaysData &&
+              todaysData.slice(0, 1).map((hour) => (
+                <figcaption key={hour}>
+                  <p>
+                    Date : {hour.substr(0, 10)}
+                    <br />
+                    Heure : {hour.substr(11, 5)}
+                    <br />
+                    Température :{" "}
+                    {
+                      fetchedData.hourly.temperature_2m[
+                        fetchedData.hourly.time.indexOf(hour)
+                      ]
+                    }{" "}
+                    °C
+                    <br />
                     <img
                       src={getConditionImage(
                         fetchedData.hourly.temperature_2m[
@@ -67,12 +67,12 @@ function App() {
                       alt="condition"
                       width="50px"
                     />
-                  </div>
-                </div>
-              </p>
-            </figcaption>
-          ))}
-      </figure>
+                  </p>
+                </figcaption>
+              ))}
+          </figure>
+        </div>
+      </div>
     </div>
   );
 }
