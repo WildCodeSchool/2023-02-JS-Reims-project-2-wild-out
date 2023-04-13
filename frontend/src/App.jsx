@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import Home from "./pages/Home";
 import sunImage from "./assets/sun.png";
 import cloudImage from "./assets/cloud.png";
 import rainImage from "./assets/rain.png";
@@ -16,10 +15,10 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         setFetchedData(data);
-        // extract today's date and filter the data for the current date only
-        const currentDate = new Date().toISOString().substr(0, 10);
+        // extract current hour and filter the data for the current hour only
+        const currentHour = new Date().getHours();
         const filteredData = data.hourly.time.filter(
-          (date) => date.substr(0, 10) === currentDate
+          (time) => new Date(time).getHours() === currentHour
         );
         setTodaysData(filteredData);
       });
@@ -37,26 +36,43 @@ function App() {
 
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
       <button type="button" onClick={fetchOneTime}>
-        click me
+        Afficher les prévisions météo
       </button>
-      {todaysData &&
-        todaysData.map((hour, index) => (
-          <p key={hour}>
-            Date : {hour.substr(0, 10)}
-            <br />
-            Heure : {hour.substr(11, 5)}
-            <br />
-            Température: {fetchedData.hourly.temperature_2m[index]} °C
-            <img
-              src={getConditionImage(fetchedData.hourly.temperature_2m[index])}
-              alt="condition"
-              width="30px"
-            />
-          </p>
-        ))}
+      <figure className="meteo">
+        {todaysData &&
+          todaysData.slice(0, 1).map((hour) => (
+            <figcaption key={hour}>
+              <p>
+                Date : {hour.substr(0, 10)}
+                <br />
+                Heure : {hour.substr(11, 5)}
+                <br />
+                Température :{" "}
+                {
+                  fetchedData.hourly.temperature_2m[
+                    fetchedData.hourly.time.indexOf(hour)
+                  ]
+                }{" "}
+                °C
+                <br />
+                <div className="zoom d-flex justify-content-center">
+                  <div className="p-2 m-2">
+                    <img
+                      src={getConditionImage(
+                        fetchedData.hourly.temperature_2m[
+                          fetchedData.hourly.time.indexOf(hour)
+                        ]
+                      )}
+                      alt="condition"
+                      width="50px"
+                    />
+                  </div>
+                </div>
+              </p>
+            </figcaption>
+          ))}
+      </figure>
     </div>
   );
 }
