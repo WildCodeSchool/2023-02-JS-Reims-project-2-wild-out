@@ -4,15 +4,15 @@ import Home from "./pages/Home";
 import "./App.css";
 
 function App() {
-  const [fetchEvents, setFetchEvents] = useState(null);
+  const [events, setEvents] = useState(null);
 
   const fetchEvent = () => {
     fetch(
       "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records"
     )
       .then((response) => response.json())
-      .then((Events) => {
-        setFetchEvents(Events);
+      .then((data) => {
+        setEvents(data);
       });
   };
 
@@ -24,8 +24,8 @@ function App() {
       <button type="button" onClick={fetchEvent}>
         click me
       </button>
-      {fetchEvents &&
-        fetchEvents.records.map((event) => (
+      {events &&
+        events.records.map((event) => (
           <p key={event.record.id}>{event.record.fields.title_fr}</p>
         ))}
     </div>
