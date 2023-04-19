@@ -1,0 +1,172 @@
+{
+  "total_count": 520155,
+  "records": [
+    {
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records/e2af88aa49bdcf91cf32b58c0edc6fe2aaa5a946"
+        },
+        {
+          "rel": "datasets",
+          "href": "https://public.opendatasoft.com/api/v2/catalog/datasets"
+        },
+        {
+          "rel": "dataset",
+          "href": "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda"
+        }
+      ],
+      "record": {
+        "id": "e2af88aa49bdcf91cf32b58c0edc6fe2aaa5a946",
+        "timestamp": "2023-02-13T04:00:18Z",
+        "size": 1395,
+        "fields": {
+          "uid": "15110405",
+          "slug": "carnaval-de-lecole-epona-de-neuvy-en-sullias",
+          "canonicalurl": "https://openagenda.com/cmf/events/carnaval-de-lecole-epona-de-neuvy-en-sullias",
+          "title_fr": "Carnaval de l'\u00e9cole Epona de Neuvy en Sullias",
+          "description_fr": "Carnaval de l'\u00e9cole Epona de Neuvy en Sullias",
+          "longdescription_fr": "<p>Carnaval de l'\u00e9cole Epona de Neuvy en Sullias</p>",
+          "conditions_fr": null,
+          "keywords_fr": null,
+          "image": "https://cibul.s3.amazonaws.com/8422a58594ca481190839911a39beaeb.base.image.jpg",
+          "imagecredits": null,
+          "thumbnail": "https://cibul.s3.amazonaws.com/8422a58594ca481190839911a39beaeb.thumb.image.jpg",
+          "originalimage": "https://cibul.s3.amazonaws.com/8422a58594ca481190839911a39beaeb.full.image.jpg",
+          "updatedat": "2023-02-13T04:00:18+00:00",
+          "daterange_fr": "Samedi 25 mars, 14h00",
+          "firstdate_begin": "2023-03-25T13:00:00+00:00",
+          "firstdate_end": "2023-03-25T15:30:00+00:00",
+          "lastdate_begin": "2023-03-25T13:00:00+00:00",
+          "lastdate_end": "2023-03-25T15:30:00+00:00",
+          "timings": "[{\"begin\": \"2023-03-25T14:00:00+01:00\", \"end\": \"2023-03-25T16:30:00+01:00\"}]",
+          "accessibility": null,
+          "accessibility_label_fr": null,
+          "location_uid": "80226534",
+          "location_coordinates": { "lon": 2.244576, "lat": 47.793709 },
+          "location_name": "Ecole Neuvy-en-Sullias",
+          "location_address": "1 rue des Ecoles  , 45510 Neuvy-en-Sullias",
+          "location_district": null,
+          "location_insee": null,
+          "location_postalcode": null,
+          "location_city": "Neuvy-en-Sullias",
+          "location_department": null,
+          "location_region": null,
+          "location_countrycode": "FR",
+          "location_image": null,
+          "location_imagecredits": null,
+          "location_phone": null,
+          "location_website": null,
+          "location_links": null,
+          "location_tags": null,
+          "location_description_fr": null,
+          "location_access_fr": null,
+          "attendancemode": "{\"id\": 1, \"label\": {\"fr\": \"Sur place\", \"en\": \"In situ\", \"it\": \"In presenza\", \"es\": \"Desconnectad\", \"de\": \"Offline\", \"br\": \"War al lec\\u2019h\", \"io\": \"crwdns14266:0crwdne14266:0\"}}",
+          "onlineaccesslink": null,
+          "status": "{\"id\": 2, \"label\": {\"fr\": \"Re-programm\\u00e9\", \"en\": \"Re-scheduled\", \"io\": \"crwdns16102:0crwdne16102:0\"}}",
+          "age_min": null,
+          "age_max": null,
+          "originagenda_title": "Conf\u00e9d\u00e9ration Musicale de France",
+          "originagenda_uid": "30166879",
+          "contributor_email": null,
+          "contributor_contactnumber": null,
+          "contributor_contactname": null,
+          "contributor_contactposition": null,
+          "contributor_organization": null,
+          "category": null,
+          "country_fr": "France (M\u00e9tropole)",
+          "registration": null,
+          "links": null
+        }
+      }
+    },
+    {
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records/7e174e512cb39f9016df918624f03ff37382e9bd"
+        },
+        {
+          "rel": "datasets",
+          "href": "https://public.opendatasoft.com/api/v2/catalog/datasets"
+        },
+        {
+          "rel": "dataset",
+          "href": "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda"
+        }
+      ],
+      "record": {
+        "id": "7e174e512cb39f9016df918624f03ff37382e9bd",
+        "timestamp": "2023-02-13T10:14:20Z",
+        "size": 2571,
+        "fields": {
+          "uid": "14740715",
+          "slug": "la-mosaique-un-art-a-l-infini",
+          "canonicalurl": "https://openagenda.com/journees-europeennes-des-metiers-dart-hauts-de-france/events/la-mosaique-un-art-a-l-infini",
+          "title_fr": "La mosa\u00efque, un art \u00e0 l'infini",
+          "description_fr": "La mosaique, peinture pour l'\u00e9ternit\u00e9",
+          "longdescription_fr": "<p>La Mosa\u00efque, art ancestral et tellement moderne, qui s\u2019inscrit aussi bien dans la tradition que dans nos codes de d\u00e9coration actuel, me permet d\u2019exprimer ma cr\u00e9ativit\u00e9 \u00e0 travers plusieurs techniques en utilisant des mat\u00e9riaux differents aux multiples couleurs.<br />Cet art se d\u00e9cline \u00e0 l'infini, et c'est ainsi que depuis quelques ann\u00e9es mon travail a vraiment pris un sens particulier puisque \u00e0 la demande de familles endeuill\u00e9es je cr\u00e9e et r\u00e9alise des mosaiques pour les monuments fun\u00e9raires.<br />D\u00e9monstration de mon savoir faire, explication sur mon travail et ma d\u00e9marche... \u00e0 d\u00e9couvrir \u00e0 l'atelier, une mosaique en cours de r\u00e9alisation.</p>",
+          "conditions_fr": null,
+          "keywords_fr": [
+            "atelier mosaique",
+            "cr\u00e9ation mosaique",
+            "art fun\u00e9raire",
+            "pierre tombale mosaique",
+            "stage mosaique",
+            "cours de mosaique",
+            "mosaique",
+            "d\u00e9coration mosaique"
+          ],
+          "image": "https://cibul.s3.amazonaws.com/6d9710714655496e9ebbbf3d15b7cb04.base.image.jpg",
+          "imagecredits": "A l'atelier mosaique en cours de r\u00e9alisation ....atelier troglodytiqye",
+          "thumbnail": "https://cibul.s3.amazonaws.com/6d9710714655496e9ebbbf3d15b7cb04.thumb.image.jpg",
+          "originalimage": "https://cibul.s3.amazonaws.com/6d9710714655496e9ebbbf3d15b7cb04.full.image.jpg",
+          "updatedat": "2023-02-13T10:14:20+00:00",
+          "daterange_fr": "1 et 2 avril",
+          "firstdate_begin": "2023-04-01T08:00:00+00:00",
+          "firstdate_end": "2023-04-01T16:00:00+00:00",
+          "lastdate_begin": "2023-04-02T08:00:00+00:00",
+          "lastdate_end": "2023-04-02T16:00:00+00:00",
+          "timings": "[{\"begin\": \"2023-04-01T10:00:00+02:00\", \"end\": \"2023-04-01T18:00:00+02:00\"}, {\"begin\": \"2023-04-02T10:00:00+02:00\", \"end\": \"2023-04-02T18:00:00+02:00\"}]",
+          "accessibility": null,
+          "accessibility_label_fr": null,
+          "location_uid": "94834126",
+          "location_coordinates": { "lon": 2.4211, "lat": 49.20073 },
+          "location_name": "VILLAGE TROGLODYTE D'ARTISANS D'ART",
+          "location_address": "impasse des carrieres 60270 GOUVIEUX",
+          "location_district": null,
+          "location_insee": "60282",
+          "location_postalcode": "60270",
+          "location_city": "Gouvieux",
+          "location_department": "Oise",
+          "location_region": "Hauts-de-France",
+          "location_countrycode": "FR",
+          "location_image": null,
+          "location_imagecredits": null,
+          "location_phone": null,
+          "location_website": null,
+          "location_links": null,
+          "location_tags": null,
+          "location_description_fr": null,
+          "location_access_fr": null,
+          "attendancemode": "{\"id\": 1, \"label\": {\"fr\": \"Sur place\", \"en\": \"In situ\", \"it\": \"In presenza\", \"es\": \"Desconnectad\", \"de\": \"Offline\", \"br\": \"War al lec\\u2019h\", \"io\": \"crwdns14266:0crwdne14266:0\"}}",
+          "onlineaccesslink": null,
+          "status": "{\"id\": 1, \"label\": {\"fr\": \"Programm\\u00e9\", \"en\": \"Scheduled\", \"io\": \"crwdns16100:0crwdne16100:0\"}}",
+          "age_min": null,
+          "age_max": null,
+          "originagenda_title": "Journ\u00e9es Europ\u00e9ennes des M\u00e9tiers d'Art 2023 - JEMA - Hauts-de-France",
+          "originagenda_uid": "84210833",
+          "contributor_email": null,
+          "contributor_contactnumber": null,
+          "contributor_contactname": null,
+          "contributor_contactposition": null,
+          "contributor_organization": null,
+          "category": null,
+          "country_fr": "France (M\u00e9tropole)",
+          "registration": "[{\"type\": \"link\", \"value\": \"http://www.mozaiktoone.com\"}]",
+          "links": null
+        }
+      }
+    }
+  ]
+}
