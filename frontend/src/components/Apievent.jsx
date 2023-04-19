@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Apievent() {
+function ApiEvent() {
   const [events, setEvents] = useState(null);
 
   const fetchEvent = () => {
@@ -26,4 +26,4 @@ function Apievent() {
   );
 }
 
-export default Apievent;
+export default ApiEvent;
