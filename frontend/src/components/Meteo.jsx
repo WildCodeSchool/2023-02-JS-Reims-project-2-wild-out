@@ -3,35 +3,33 @@ import tempImage from "../assets/temp.png";
 
 function Meteo({ todaysData = [], getConditionImage, fetchedData = {} }) {
   return (
-    <div className="App">
+    <div className="AppMeteo">
       {todaysData &&
         todaysData.slice(0, 1).map((hour) => (
           <div className="case" key={hour}>
-            <div>
-              <p className="pDH">
-                Date : {hour.substr(0, 10)} --- Heure : {hour.substr(11, 5)}
-              </p>
-              <figure>
-                <img
-                  className="iconeMeteo"
-                  src={getConditionImage(
-                    fetchedData.hourly.temperature_2m[
-                      fetchedData.hourly.time.indexOf(hour)
-                    ]
-                  )}
-                  alt="condition"
-                />
-                <figcaption className="pTemp">
-                  {
-                    fetchedData.hourly.temperature_2m[
-                      fetchedData.hourly.time.indexOf(hour)
-                    ]
-                  }{" "}
-                  °C
-                  <img className="Temp" src={tempImage} alt="Température" />
-                </figcaption>
-              </figure>
-            </div>
+            <p className="pDH">
+              Date : {hour.substr(0, 10)} --- Heure : {hour.substr(11, 5)}
+            </p>
+            <figure className="meteoFigure">
+              <img
+                className="iconeMeteo"
+                src={getConditionImage(
+                  fetchedData.hourly.temperature_2m[
+                    fetchedData.hourly.time.indexOf(hour)
+                  ]
+                )}
+                alt="condition"
+              />
+              <figcaption className="pTemp">
+                {
+                  fetchedData.hourly.temperature_2m[
+                    fetchedData.hourly.time.indexOf(hour)
+                  ]
+                }{" "}
+                °C
+                <img className="Temp" src={tempImage} alt="Température" />
+              </figcaption>
+            </figure>
           </div>
         ))}
     </div>

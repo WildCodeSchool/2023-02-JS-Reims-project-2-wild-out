@@ -53,19 +53,23 @@ function App() {
 
   return (
     <div className="App">
-      <Meteo
-        todaysData={todaysData}
-        getConditionImage={getConditionImage}
-        fetchedData={fetchedData}
-      />
-      <Map />
-      <button type="button" onClick={fetchEvent}>
-        click me
-      </button>
-      {events &&
-        events.records.map((event) => (
-          <p key={event.record.id}>{event.record.fields.title_fr}</p>
-        ))}
+      <div className="AppMeteo">
+        <Meteo
+          todaysData={todaysData}
+          getConditionImage={getConditionImage}
+          fetchedData={fetchedData}
+        />
+      </div>
+      <div className="Map">
+        <Map />
+        <button type="button" onClick={fetchEvent}>
+          click me
+        </button>
+        {events &&
+          events.records.map((event) => (
+            <p key={event.record.id}>{event.record.fields.title_fr}</p>
+          ))}
+      </div>
     </div>
   );
 }

@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .leaflet-container {
   min-height: 100vh;
 }
@@ -16,68 +21,74 @@ code {
     monospace;
 }
 
-.App {
-  text-align: center;
-  color: white;
+.AppMeteo {
+  color: black;
   font-size: 2.5em;
-}
-
-.pMeteo {
+  font-weight: 700;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  width: 30%;
-}
-
-.meteo {
-  margin-left: auto;
 }
 
 .case {
   margin-left: auto;
-  text-align: center;
-  background-color: rgb(0, 90, 86);
-  border: lightgray solid;
+  background-color: lightgrey;
+  border: 5px lightgray solid;
   border-radius: 5px;
   box-shadow: 10px 10px 30px 10px black;
-  width: 15%;
-  line-height: 0%;
-  display: block;
+  width: 300px;
+}
+
+.meteoFigure {
+  display: flex;
+  justify-content: space-around;
 }
 
 .Temp {
-  width: 15%;
-  height: 15%;
+  width: 50px;
+  height: 50px;
 }
 
 .pDH {
-  font-size: 10%;
+  font-size: 15px;
 }
 
 .iconeMeteo {
-  width: 50%;
+  width: 100px;
 }
 .pTemp {
-  font-size: 30%;
+  font-size: 45px;
+}
+
+.Map {
+  border: 5px lightgray solid;
+  border-radius: 5px;
 }
 
 @media screen and (max-width: 700px) {
-  .App {
-    text-align: center;
-    color: white;
-    font-size: 1em;
+  .AppMeteo {
+    font-size: 2.5em;
+  }
+  .meteoFigure {
+    display: flex;
+    align-items: center;
   }
   .case {
-    margin-left: auto;
-    text-align: center;
-    background-color: rgb(0, 116, 110);
-    border: lightgray solid;
-    border-radius: 5px;
-    box-shadow: 5px 5px 20px 5px black;
-    width: 40%;
+    width: 100px;
+  }
+  .Temp {
+    width: 20px;
+    height: 20px;
   }
   .pTemp {
-    font-size: 80%;
+    font-size: 20px;
+  }
+  .iconeMeteo {
+    width: 70px;
   }
   .pDH {
-    font-size: 8px;
+    display: none;
+  }
+  .meteoFigure {
+    display: flex;
+    flex-direction: column;
   }
 }
