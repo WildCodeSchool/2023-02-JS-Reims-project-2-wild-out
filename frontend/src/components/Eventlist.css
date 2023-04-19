@@ -1,0 +1,11 @@
+.Allsite {
+  grid-template-columns: 3fr 1.5fr;
+  display: grid;
+}
+
+.Eventlist {
+  background-color: yellowgreen;
+  grid-column: 2;
+  display: flex;
+  flex-direction: column-reverse;
+}
