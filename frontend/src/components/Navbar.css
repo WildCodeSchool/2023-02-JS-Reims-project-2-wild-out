@@ -1,0 +1,14 @@
+.navbar {
+  background: rgb(25, 72, 82);
+  background: linear-gradient(
+    49deg,
+    rgba(25, 72, 82, 1) 0%,
+    rgba(25, 93, 100, 1) 61%,
+    rgba(25, 101, 108, 1) 100%
+  );
+}
+
+.logo {
+  height: 3rem;
+  width: 3rem;
+}

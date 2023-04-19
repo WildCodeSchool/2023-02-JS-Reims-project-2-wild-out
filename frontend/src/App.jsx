@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Map from "./components/Map";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [events, setEvents] = useState(null);
@@ -16,15 +17,19 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Map />
-      <button type="button" onClick={fetchEvent}>
-        click me
-      </button>
-      {events &&
-        events.records.map((event) => (
-          <p key={event.record.id}>{event.record.fields.title_fr}</p>
-        ))}
+    <div>
+      <Navbar />
+
+      <div className="App">
+        <Map />
+        <button type="button" onClick={fetchEvent}>
+          click me
+        </button>
+        {events &&
+          events.records.map((event) => (
+            <p key={event.record.id}>{event.record.fields.title_fr}</p>
+          ))}
+      </div>
     </div>
   );
 }
