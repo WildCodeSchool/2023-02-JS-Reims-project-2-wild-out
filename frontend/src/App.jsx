@@ -5,6 +5,7 @@ import cloudImage from "./assets/cloud.png";
 import rainImage from "./assets/rain.png";
 import Meteo from "./components/Meteo";
 import Map from "./components/Map";
+import Navbar from "./components/Navbar";
 import ApiEvent from "./components/ApiEvent";
 
 function App() {
@@ -54,6 +55,9 @@ function App() {
 
   return (
     <div className="App">
+      <div>
+        <Navbar />
+      </div>
       <div className="AppMeteo">
         <Meteo
           todaysData={todaysData}
