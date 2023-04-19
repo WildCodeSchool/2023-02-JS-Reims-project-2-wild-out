@@ -3,7 +3,7 @@ import "./App.css";
 import sunImage from "./assets/sun.png";
 import cloudImage from "./assets/cloud.png";
 import rainImage from "./assets/rain.png";
-import tempImage from "./assets/temp.png";
+import Meteo from "./components/Meteo";
 
 function App() {
   const [fetchedData, setFetchedData] = useState(null);
@@ -40,38 +40,11 @@ function App() {
 
   return (
     <div className="App">
-      <figure className="meteo">
-        {todaysData &&
-          todaysData.slice(0, 1).map((hour) => (
-            <figcaption key={hour}>
-              <p className="pMeteo">
-                <p className="DH">
-                  Date : {hour.substr(0, 10)}
-                  <br />
-                  Heure : {hour.substr(11, 5)}
-                </p>
-                <br />
-                <img
-                  className="imgMeteo"
-                  src={getConditionImage(
-                    fetchedData.hourly.temperature_2m[
-                      fetchedData.hourly.time.indexOf(hour)
-                    ]
-                  )}
-                  alt="condition"
-                />
-                <br />
-                {
-                  fetchedData.hourly.temperature_2m[
-                    fetchedData.hourly.time.indexOf(hour)
-                  ]
-                }{" "}
-                °C
-                <img className="imgTemp" src={tempImage} alt="Température" />
-              </p>
-            </figcaption>
-          ))}
-      </figure>
+      <Meteo
+        todaysData={todaysData}
+        getConditionImage={getConditionImage}
+        fetchedData={fetchedData}
+      />
     </div>
   );
 }
