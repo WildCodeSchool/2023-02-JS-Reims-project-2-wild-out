@@ -5,7 +5,7 @@ export default function Eventlist() {
   return (
     <div className="Eventlist">
       <ul>
-        <li> daaaaaaaaaaaaaaaa </li>
+        <li> Event 1 : </li>
         <li> Vaaaaaaaaaaa </li>
         <li> boooooooo </li>
         <li> couuuuuuuuuuuuu </li>

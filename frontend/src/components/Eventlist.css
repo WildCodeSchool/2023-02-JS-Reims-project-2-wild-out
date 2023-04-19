@@ -4,8 +4,19 @@
 }
 
 .Eventlist {
-  background-color: yellowgreen;
-  grid-column: 2;
-  display: flex;
-  flex-direction: column-reverse;
+  background: rgb(255, 145, 0);
+  background: linear-gradient(
+    163deg,
+    rgba(255, 145, 0, 1) 0%,
+    rgba(250, 240, 94, 1) 46%,
+    rgba(54, 216, 202, 1) 100%
+  );
+}
+@media screen and (max-width: 600px) {
+  .Allsite {
+    grid-template-columns: auto;
+  }
+  .Eventlist {
+    display: none;
+  }
 }
