@@ -36,10 +36,12 @@ code {
   box-shadow: 10px 10px 30px 10px black;
   width: 15%;
   line-height: 0%;
+  display: block;
 }
 
 .Temp {
-  width: 11%;
+  width: 15%;
+  height: 15%;
 }
 
 .pDH {
@@ -67,6 +69,9 @@ code {
     border-radius: 10%;
     box-shadow: 5px 5px 20px 5px black;
     width: 40%;
+  }
+  .pTemp {
+    font-size: 80%;
   }
   .pDH {
     font-size: 8px;
