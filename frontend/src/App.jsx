@@ -5,6 +5,7 @@ import cloudImage from "./assets/cloud.png";
 import rainImage from "./assets/rain.png";
 import Meteo from "./components/Meteo";
 import Map from "./components/Map";
+import ApiEvent from "./components/ApiEvent";
 
 function App() {
   const [fetchedData, setFetchedData] = useState(null);
@@ -69,6 +70,9 @@ function App() {
           events.records.map((event) => (
             <p key={event.record.id}>{event.record.fields.title_fr}</p>
           ))}
+      </div>
+      <div>
+        <ApiEvent />
       </div>
     </div>
   );
