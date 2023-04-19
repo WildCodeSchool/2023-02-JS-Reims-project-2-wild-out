@@ -1,10 +1,12 @@
 import React from "react";
 import "./App.css";
+import Map from "./components/Map";
 import Apievent from "./components/Apievent";
 
 function App() {
   return (
-    <div>
+    <div className="App">
+      <Map />
       <Apievent />
     </div>
   );
