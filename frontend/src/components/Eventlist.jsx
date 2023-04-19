@@ -6,9 +6,8 @@ export default function Eventlist() {
     <div className="Eventlist">
       <ul>
         <li> Event 1 : </li>
-        <li> Vaaaaaaaaaaa </li>
-        <li> boooooooo </li>
-        <li> couuuuuuuuuuuuu </li>
+        <li> Event 2 :</li>
+        <li> Event 3 : </li>
       </ul>
     </div>
   );
