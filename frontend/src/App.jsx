@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import Eventlist from "@components/Eventlist";
 import sunImage from "./assets/sun.png";
 import cloudImage from "./assets/cloud.png";
 import rainImage from "./assets/rain.png";
@@ -7,8 +8,6 @@ import Meteo from "./components/Meteo";
 import Map from "./components/Map";
 import Navbar from "./components/Navbar";
 import ApiEvent from "./components/ApiEvent";
-import Eventlist from "@components/Eventlist";
-
 
 function App() {
   const [fetchedData, setFetchedData] = useState(null);
@@ -56,7 +55,6 @@ function App() {
   };
 
   return (
-
     <div className="App">
       <div>
         <Navbar />
@@ -81,10 +79,10 @@ function App() {
       <div>
         <ApiEvent />
       </div>
-      
-      <section className="Allsite"> 
-      <Eventlist />
-    </section>
+
+      <section className="Allsite">
+        <Eventlist />
+      </section>
     </div>
   );
 }
