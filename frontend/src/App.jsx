@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import Eventlist from "@components/Eventlist";
+import Eventlist from "./components/Eventlist";
 import sunImage from "./assets/sun.png";
 import cloudImage from "./assets/cloud.png";
 import rainImage from "./assets/rain.png";
