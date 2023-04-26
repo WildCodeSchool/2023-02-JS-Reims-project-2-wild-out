@@ -43,9 +43,7 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        <Navbar />
-      </div>
+      <Navbar />
       <div className="AppMeteo">
         <Meteo
           todaysData={todaysData}
