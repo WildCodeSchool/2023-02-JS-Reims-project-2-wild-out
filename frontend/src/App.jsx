@@ -9,18 +9,6 @@ function App() {
   const [fetchedData, setFetchedData] = useState(null);
   const [todaysData, setTodaysData] = useState(null);
 
-  const [events, setEvents] = useState(null);
-
-  const fetchEvent = () => {
-    fetch(
-      "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setEvents(data);
-      });
-  };
-
   return (
     <div className="App">
       <Navbar />
