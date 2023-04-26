@@ -5,6 +5,7 @@
 
 .leaflet-container {
   min-height: 100vh;
+  height: auto;
 }
 
 body {

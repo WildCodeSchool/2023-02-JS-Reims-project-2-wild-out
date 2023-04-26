@@ -1,14 +1,11 @@
 import React from "react";
 import "./Eventlist.css";
+import ApiEvent from "./ApiEvent";
 
 export default function Eventlist() {
   return (
     <div className="Eventlist">
-      <ul>
-        <li> Event 1 : </li>
-        <li> Event 2 :</li>
-        <li> Event 3 : </li>
-      </ul>
+      <ApiEvent />
     </div>
   );
 }

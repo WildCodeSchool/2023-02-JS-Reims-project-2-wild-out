@@ -5,7 +5,7 @@ function ApiEvent() {
 
   const fetchEvent = () => {
     fetch(
-      "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records"
+      "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records?start=0&rows=50"
     )
       .then((response) => response.json())
       .then((data) => {

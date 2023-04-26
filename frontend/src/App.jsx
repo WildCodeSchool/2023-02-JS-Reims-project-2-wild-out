@@ -7,7 +7,6 @@ import rainImage from "./assets/rain.png";
 import Meteo from "./components/Meteo";
 import Map from "./components/Map";
 import Navbar from "./components/Navbar";
-import ApiEvent from "./components/ApiEvent";
 
 function App() {
   const [fetchedData, setFetchedData] = useState(null);
@@ -42,17 +41,17 @@ function App() {
     return rainImage;
   };
 
-  const [events, setEvents] = useState(null);
+  // const [, setEvents] = useState();
 
-  const fetchEvent = () => {
-    fetch(
-      "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setEvents(data);
-      });
-  };
+  // const fetchEvent = () => {
+  //   fetch(
+  //     "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records"
+  //   )
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setEvents(data);
+  //     });
+  // };
 
   return (
     <div className="App">
@@ -69,10 +68,6 @@ function App() {
         </div>
       </section>
 
-      {/* <div>
-        <ApiEvent />
-      </div> */}
-
       <section className="Allsite">
         <div className="Map">
           <Map />
@@ -81,14 +76,6 @@ function App() {
       </section>
     </div>
   );
-
-  // <button type="button" onClick={fetchEvent}>
-  //       click me
-  //     </button>
-  //     {events &&
-  //       events.records.map((event) => (
-  //         <p key={event.record.id}>{event.record.fields.title_fr}</p>
-  //       ))}
 }
 
 export default App;
