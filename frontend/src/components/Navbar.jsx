@@ -10,10 +10,7 @@ function Navbar() {
         src="./src/assets/wild-outbis.png"
         alt="wild-out"
       />
-      <div>
-        <FavoritesButton />
-      </div>
-      ;
+      <FavoritesButton />;
     </nav>
   );
 }
