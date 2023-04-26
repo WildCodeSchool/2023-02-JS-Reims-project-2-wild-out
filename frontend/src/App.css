@@ -9,14 +9,9 @@
 
 body {
   margin: 0;
-  font-family: "Lato", sans-serif;
+  font-family: "lato", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 
 .AppMeteo {
@@ -70,7 +65,8 @@ code {
     align-items: center;
   }
   .case {
-    width: 100px;
+    width: 150px;
+    height: 100px;
   }
   .Temp {
     width: 20px;

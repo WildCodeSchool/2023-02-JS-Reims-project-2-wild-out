@@ -13,11 +13,20 @@
 }
 
 .logo {
-  height: 3rem;
-  width: 3rem;
+  height: 5rem;
+  width: 5rem;
 }
-
 .wildout {
-  height: 3rem;
-  width: 10rem;
+  height: 5rem;
+  width: 20rem;
+}
+@media screen and (min-width: 700px) {
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+  .wildout {
+    height: 100px;
+    width: 260px;
+  }
 }
