@@ -23,9 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        <Navbar />
-      </div>
+      <Navbar />
       <div className="AppMeteo">
         <Meteo
           todaysData={todaysData}
@@ -36,17 +34,8 @@ function App() {
       </div>
       <div className="Map">
         <Map />
-        <button type="button" onClick={fetchEvent}>
-          click me
-        </button>
-        {events &&
-          events.records.map((event) => (
-            <p key={event.record.id}>{event.record.fields.title_fr}</p>
-          ))}
       </div>
-      <div>
-        <ApiEvent />
-      </div>
+      <ApiEvent />
     </div>
   );
 }
