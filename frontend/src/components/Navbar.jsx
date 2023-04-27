@@ -14,7 +14,7 @@ function Navbar() {
         src="./src/assets/supertitre.png"
         alt="wild-out"
       />
-      <FavoritesButton />;
+      <FavoritesButton />
     </nav>
   );
 }

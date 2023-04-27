@@ -13,12 +13,12 @@
 }
 
 .logo {
-  height: 5rem;
-  width: 5rem;
+  height: 3rem;
+  width: 3rem;
 }
 .wildout {
-  height: 5rem;
-  width: 20rem;
+  height: 3rem;
+  width: 10rem;
 }
 @media screen and (min-width: 700px) {
   .logo {
@@ -28,5 +28,10 @@
   .wildout {
     height: 100px;
     width: 260px;
+  }
+
+  .button_favorites {
+    display: flex;
+    justify-content: flex-end;
   }
 }
