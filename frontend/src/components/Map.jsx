@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 function Map() {
   const [events, setEvents] = useState([]);
+
   useEffect(() => {
     fetch(
       "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records?start=0&rows=100"
@@ -12,6 +13,7 @@ function Map() {
         setEvents(data.records);
       });
   }, []);
+
   return (
     <div className="App">
       <MapContainer center={[49.256948, 4.019683, -0.09]} zoom={13}>
