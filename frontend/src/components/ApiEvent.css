@@ -5,7 +5,7 @@
     rgba(250, 240, 94, 1) 46%,
     rgba(54, 216, 202, 1) 100%
   );
-
+  display: none;
   border-radius: 100%;
   padding: 0.5rem;
   width: 24px;
@@ -15,4 +15,31 @@
 
 .button_scroll {
   text-align: center;
+  color: black;
+}
+.eventNew {
+  text-align: left;
+  margin: 0.5rem;
+  display: block;
+  border: 2px solid black;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+@media screen and (max-width: 700px) {
+  #buttonScrollEvents {
+    background: linear-gradient(
+      163deg,
+      rgba(255, 145, 0, 1) 0%,
+      rgba(250, 240, 94, 1) 46%,
+      rgba(54, 216, 202, 1) 100%
+    );
+
+    display: initial;
+    border-radius: 100%;
+    padding: 0.5rem;
+    width: 24px;
+    height: 24px;
+    box-sizing: content-box;
+  }
 }
