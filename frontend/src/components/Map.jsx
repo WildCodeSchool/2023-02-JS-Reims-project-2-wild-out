@@ -6,7 +6,7 @@ function Map() {
 
   useEffect(() => {
     fetch(
-      "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records"
+      "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records?start=0&rows=100"
     )
       .then((response) => response.json())
       .then((data) => {
@@ -45,5 +45,4 @@ function Map() {
     </div>
   );
 }
-
 export default Map;

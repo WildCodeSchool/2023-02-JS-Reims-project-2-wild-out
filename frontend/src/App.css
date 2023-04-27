@@ -5,6 +5,7 @@
 
 .leaflet-container {
   min-height: 100vh;
+  height: auto;
 }
 
 body {
@@ -32,7 +33,7 @@ code {
   border: 5px lightgray solid;
   border-radius: 5px;
   box-shadow: 10px 10px 30px 10px black;
-  width: 300px;
+  width: auto;
 }
 
 .meteoFigure {
@@ -59,6 +60,18 @@ code {
 .Map {
   border: 5px lightgray solid;
   border-radius: 5px;
+}
+.nabar {
+  align-items: center;
+}
+.navbarmeteo {
+  grid-template-columns: 3.75fr 1.25fr;
+  display: grid;
+  margin: 0;
+}
+.navbaronly {
+  display: grid;
+  grid-template-rows: 1fr;
 }
 
 @media screen and (max-width: 700px) {
@@ -89,4 +102,26 @@ code {
     display: flex;
     flex-direction: column;
   }
+
+  .Allsite {
+    grid-template-columns: auto;
+  }
+  .Eventlist {
+    display: none;
+  }
+}
+
+.Allsite {
+  grid-template-columns: 3fr 1.5fr;
+  display: grid;
+}
+
+.Eventlist {
+  background: rgb(255, 145, 0);
+  background: linear-gradient(
+    163deg,
+    rgba(255, 145, 0, 1) 0%,
+    rgba(250, 240, 94, 1) 46%,
+    rgba(54, 216, 202, 1) 100%
+  );
 }

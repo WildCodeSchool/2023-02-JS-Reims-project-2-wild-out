@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
+import Eventlist from "./components/Eventlist";
 import Meteo from "./components/Meteo";
 import Map from "./components/Map";
 import Navbar from "./components/Navbar";
-import ApiEvent from "./components/ApiEvent";
 
 function App() {
   const [fetchedData, setFetchedData] = useState(null);
@@ -11,19 +11,23 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
-      <div className="AppMeteo">
-        <Meteo
-          todaysData={todaysData}
-          fetchedData={fetchedData}
-          setFetchedData={setFetchedData}
-          setTodaysData={setTodaysData}
-        />
-      </div>
-      <div className="Map">
-        <Map />
-      </div>
-      <ApiEvent />
+      <section className="navbarmeteo">
+        <Navbar />
+        <div className="AppMeteo">
+          <Meteo
+            todaysData={todaysData}
+            fetchedData={fetchedData}
+            setFetchedData={setFetchedData}
+            setTodaysData={setTodaysData}
+          />
+        </div>
+      </section>
+      <section className="Allsite">
+        <div className="Map">
+          <Map />
+        </div>
+        <Eventlist />
+      </section>
     </div>
   );
 }
