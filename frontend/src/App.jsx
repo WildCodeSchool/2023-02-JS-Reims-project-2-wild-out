@@ -11,18 +11,25 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
-      <div className="AppMeteo">
-        <Meteo
-          todaysData={todaysData}
-          fetchedData={fetchedData}
-          setFetchedData={setFetchedData}
-          setTodaysData={setTodaysData}
-        />
-      </div>
-      <div className="Map">
-        <Map />
-      </div>
+      <section className="navbarmeteo">
+        <div className="navbaronly">
+          <Navbar />
+        </div>
+        <div className="AppMeteo">
+          <Meteo
+            todaysData={todaysData}
+            fetchedData={fetchedData}
+            setFetchedData={setFetchedData}
+            setTodaysData={setTodaysData}
+          />
+        </div>
+      </section>
+
+      <section className="Allsite">
+        <div className="Map">
+          <Map />
+        </div>
+      </section>
       <ApiEvent />
     </div>
   );

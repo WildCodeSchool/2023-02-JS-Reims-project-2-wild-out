@@ -32,7 +32,7 @@ code {
   border: 5px lightgray solid;
   border-radius: 5px;
   box-shadow: 10px 10px 30px 10px black;
-  width: 300px;
+  width: auto;
 }
 
 .meteoFigure {
@@ -59,6 +59,19 @@ code {
 .Map {
   border: 5px lightgray solid;
   border-radius: 5px;
+}
+
+.nabar {
+  align-items: center;
+}
+.navbarmeteo {
+  grid-template-columns: 4fr 1fr;
+  display: grid;
+  margin: 0;
+}
+.navbaronly {
+  display: grid;
+  grid-template-rows: 1fr;
 }
 
 @media screen and (max-width: 700px) {
