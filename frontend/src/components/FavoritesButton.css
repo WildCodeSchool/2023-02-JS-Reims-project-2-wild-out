@@ -5,3 +5,10 @@
   height: 48px;
   box-sizing: content-box;
 }
+
+@media screen and (max-width: 700px) {
+  .button_favorites {
+    width: 15px;
+    height: 15px;
+  }
+}

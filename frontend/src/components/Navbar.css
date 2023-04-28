@@ -16,8 +16,22 @@
   height: 3rem;
   width: 3rem;
 }
-
 .wildout {
   height: 3rem;
   width: 10rem;
+}
+@media screen and (min-width: 700px) {
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+  .wildout {
+    height: 100px;
+    width: 260px;
+  }
+
+  .button_favorites {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
