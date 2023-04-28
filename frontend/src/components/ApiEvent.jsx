@@ -19,7 +19,7 @@ function ApiEvent() {
   }, []);
 
   return (
-    <div className="button_scroll">
+    <div className="textEventList">
       {events &&
         events.records.map((event) => (
           <p className="eventNew" key={event.record.id}>
