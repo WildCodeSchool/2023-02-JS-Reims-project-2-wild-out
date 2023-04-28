@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./ApiEvent.css";
 
 function ApiEvent() {
@@ -14,22 +14,26 @@ function ApiEvent() {
       });
   };
 
+  useEffect(() => {
+    fetchEvent();
+  }, []);
+
   return (
-    <div className="button_scroll">
+    <div className="textEventList">
+      {events &&
+        events.records.map((event) => (
+          <p className="eventNew" key={event.record.id}>
+            {event.record.fields.title_fr} (
+            {event.record.fields.location_coordinates.lon}
+            {event.record.fields.location_coordinates.lat})
+          </p>
+        ))}
       <button type="button" onClick={fetchEvent} id="buttonScrollEvents">
         <img
           src=".\src\assets\chevrons_bas 24px.png"
           alt="chevronsClickables"
         />
       </button>
-      {events &&
-        events.records.map((event) => (
-          <p key={event.record.id}>
-            {event.record.fields.title_fr} (lon:
-            {event.record.fields.location_coordinates.lon}/ lat:
-            {event.record.fields.location_coordinates.lat})
-          </p>
-        ))}
     </div>
   );
 }
