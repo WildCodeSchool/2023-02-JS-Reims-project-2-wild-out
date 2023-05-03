@@ -1,43 +1,37 @@
-import React from "react";
-import PropTypes from "prop-types";
+import { useState } from "react";
 import "./ApiEvent.css";
+import PropTypes from "prop-types";
 
-function ApiEvent(props) {
-  const { events, setEvents } = props;
-
-  const fetchEvent = () => {
-    fetch(
-      "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setEvents(data);
-      });
-  };
+function ApiEvent({ events }) {
+  const [isOpen, setOpen] = useState(false);
 
   return (
-    <div className="button_scroll">
-      <button type="button" onClick={fetchEvent} id="buttonScrollEvents">
+    <details className="textEventList" onToggle={() => setOpen(!isOpen)}>
+      {events.map((event) => (
+        <p className="eventNew" key={event.record.id}>
+          {event.record.fields.title_fr} (
+          {event.record.fields.location_coordinates.lon}
+          {event.record.fields.location_coordinates.lat})
+        </p>
+      ))}
+      <summary id="buttonScrollEvents" className={isOpen ? "open" : "close"}>
         <img
           src=".\src\assets\chevrons_bas 24px.png"
           alt="chevronsClickables"
         />
-      </button>
-      {events &&
-        events.records.map((event) => (
-          <p key={event.record.id}>
-            {event.record.fields.title_fr} (lon:
-            {event.record.fields.location_coordinates.lon}/ lat:
-            {event.record.fields.location_coordinates.lat})
-          </p>
-        ))}
-    </div>
+      </summary>
+    </details>
   );
 }
 
 ApiEvent.propTypes = {
   events: PropTypes.arrayOf(PropTypes.string).isRequired,
-  setEvents: PropTypes.func.isRequired,
+  fetchedData: PropTypes.shape({
+    hourly: PropTypes.shape({
+      temperature_2m: PropTypes.arrayOf(PropTypes.number),
+      time: PropTypes.arrayOf(PropTypes.string),
+    }),
+  }).isRequired,
 };
 
 export default ApiEvent;

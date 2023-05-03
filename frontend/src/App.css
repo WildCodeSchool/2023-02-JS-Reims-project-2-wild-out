@@ -5,6 +5,7 @@
 
 .leaflet-container {
   min-height: 100vh;
+  height: auto;
 }
 
 body {
@@ -17,6 +18,12 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .AppMeteo {
@@ -55,18 +62,12 @@ code {
 .pTemp {
   font-size: 45px;
 }
-
-.Map {
-  border: 5px lightgray solid;
-  border-radius: 5px;
-}
-
-.nabar {
-  align-items: center;
+.navbar {
+  flex-grow: 1;
 }
 .navbarmeteo {
-  grid-template-columns: 4fr 1fr;
-  display: grid;
+  flex-direction: row;
+  display: flex;
   margin: 0;
 }
 .navbaronly {
@@ -74,6 +75,24 @@ code {
   grid-template-rows: 1fr;
 }
 
+.Allsite {
+  flex-direction: row;
+  display: flex;
+  flex-grow: 1;
+  align-items: stretch;
+}
+
+.Eventlist {
+  background: rgb(255, 145, 0);
+  background: linear-gradient(
+    163deg,
+    rgba(255, 145, 0, 1) 0%,
+    rgba(250, 240, 94, 1) 46%,
+    rgba(54, 216, 202, 1) 100%
+  );
+}
+
+/* Version mobile  */
 @media screen and (max-width: 700px) {
   .AppMeteo {
     font-size: 2.5em;
@@ -100,6 +119,10 @@ code {
   }
   .meteoFigure {
     display: flex;
+    flex-direction: column;
+  }
+
+  .Allsite {
     flex-direction: column;
   }
 }
