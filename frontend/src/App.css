@@ -98,6 +98,12 @@ body {
     display: flex;
     flex-direction: column;
   }
+  .button_favorites {
+    display: flex;
+    align-items: flex-end;
+    width: 15px;
+    height: 15px;
+  }
 
   .Allsite {
     grid-template-columns: auto;
