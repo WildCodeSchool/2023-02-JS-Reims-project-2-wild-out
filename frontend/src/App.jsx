@@ -1,20 +1,17 @@
 import React, { useState } from "react";
 import "./App.css";
+import Eventlist from "./components/Eventlist";
 import Meteo from "./components/Meteo";
 import Map from "./components/Map";
 import Navbar from "./components/Navbar";
-import ApiEvent from "./components/ApiEvent";
 
 function App() {
   const [fetchedData, setFetchedData] = useState(null);
   const [todaysData, setTodaysData] = useState(null);
-
   return (
     <div className="App">
       <section className="navbarmeteo">
-        <div className="navbaronly">
-          <Navbar />
-        </div>
+        <Navbar />
         <div className="AppMeteo">
           <Meteo
             todaysData={todaysData}
@@ -24,15 +21,13 @@ function App() {
           />
         </div>
       </section>
-
       <section className="Allsite">
         <div className="Map">
           <Map />
         </div>
+        <Eventlist />
       </section>
-      <ApiEvent />
     </div>
   );
 }
-
 export default App;
