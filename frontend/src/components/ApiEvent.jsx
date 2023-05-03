@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./ApiEvent.css";
 
 function ApiEvent() {
@@ -6,7 +6,7 @@ function ApiEvent() {
 
   const fetchEvent = () => {
     fetch(
-      "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records"
+      "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records?start=0&rows=50"
     )
       .then((response) => response.json())
       .then((data) => {
@@ -14,8 +14,20 @@ function ApiEvent() {
       });
   };
 
+  useEffect(() => {
+    fetchEvent();
+  }, []);
+
   return (
-    <div className="button_scroll">
+    <div className="textEventList">
+      {events &&
+        events.records.map((event) => (
+          <p className="eventNew" key={event.record.id}>
+            {event.record.fields.title_fr} (
+            {event.record.fields.location_coordinates.lon}
+            {event.record.fields.location_coordinates.lat})
+          </p>
+        ))}
       <button type="button" onClick={fetchEvent} id="buttonScrollEvents">
         <img
           src=".\src\assets\chevrons_bas 24px.png"
