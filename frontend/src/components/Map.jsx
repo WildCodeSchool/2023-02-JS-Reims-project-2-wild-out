@@ -1,9 +1,7 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { useEffect, useState } from "react";
 
-function Map() {
-  const [events, setEvents] = useState([]);
-
+function Map({ events, setEvents }) {
   useEffect(() => {
     fetch(
       "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records"

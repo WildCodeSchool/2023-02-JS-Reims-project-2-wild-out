@@ -1,19 +1,6 @@
-import { useState } from "react";
 import "./ApiEvent.css";
 
-function ApiEvent() {
-  const [events, setEvents] = useState(null);
-
-  const fetchEvent = () => {
-    fetch(
-      "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setEvents(data);
-      });
-  };
-
+function ApiEvent({ events, setEvents }) {
   return (
     <div className="button_scroll">
       <button type="button" onClick={fetchEvent} id="buttonScrollEvents">

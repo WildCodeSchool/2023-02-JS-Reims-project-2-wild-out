@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import "./App.css";
-import Eventlist from "./components/Eventlist";
 import Meteo from "./components/Meteo";
 import Map from "./components/Map";
 import Navbar from "./components/Navbar";
+import "./components/Eventlist.css";
 
 function App() {
   const [fetchedData, setFetchedData] = useState(null);
   const [todaysData, setTodaysData] = useState(null);
+  const [events, setEvents] = useState([]);
+
   return (
     <div className="App">
       <section className="navbarmeteo">
@@ -23,9 +25,8 @@ function App() {
       </section>
       <section className="Allsite">
         <div className="Map">
-          <Map />
+          <Map events={events} setEvents={setEvents} />
         </div>
-        <Eventlist />
       </section>
     </div>
   );
