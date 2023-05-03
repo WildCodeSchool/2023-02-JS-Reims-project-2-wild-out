@@ -1,48 +1,59 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
-function Map() {
-  const [events, setEvents] = useState([]);
-
-  useEffect(() => {
-    fetch(
-      "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records?start=0&rows=100"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setEvents(data.records);
-      });
-  }, []);
-
+function Map({ events }) {
   return (
-    <div className="App">
-      <MapContainer center={[49.256948, 4.019683, -0.09]} zoom={13}>
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        {events.map((event) => (
-          <Marker
-            key={event.record.id}
-            position={[
-              event.record.fields.location_coordinates.lat,
-              event.record.fields.location_coordinates.lon,
-            ]}
-          >
-            <Popup>
-              <h3>{event.record.fields.title_fr}</h3>
-              <h4>{event.record.fields.location_address}</h4>
-              <p>{event.record.fields.description_fr}</p>
-              <img
-                src={event.record.fields.image}
-                width={200}
-                alt={event.record.fields.title_fr}
-              />
-            </Popup>
-          </Marker>
-        ))}
-      </MapContainer>
-    </div>
+    <MapContainer
+      center={[49.256948, 4.019683]}
+      zoom={13}
+      style={{ flexGrow: 1, minHeight: "initial" }}
+    >
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      {events.map((event) => (
+        <Marker
+          key={event.record.id}
+          position={[
+            event.record.fields.location_coordinates.lat,
+            event.record.fields.location_coordinates.lon,
+          ]}
+        >
+          <Popup>
+            <h3>{event.record.fields.title_fr}</h3>
+            <h4>{event.record.fields.location_address}</h4>
+            <p>{event.record.fields.description_fr}</p>
+            <img
+              src={event.record.fields.image}
+              width={200}
+              alt={event.record.fields.title_fr}
+            />
+          </Popup>
+        </Marker>
+      ))}
+    </MapContainer>
   );
 }
+
+Map.propTypes = {
+  events: PropTypes.arrayOf(
+    PropTypes.shape({
+      record: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        fields: PropTypes.shape({
+          location_coordinates: PropTypes.shape({
+            lat: PropTypes.number.isRequired,
+            lon: PropTypes.number.isRequired,
+          }).isRequired,
+          title_fr: PropTypes.string.isRequired,
+          location_address: PropTypes.string.isRequired,
+          description_fr: PropTypes.string.isRequired,
+          image: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+    })
+  ).isRequired,
+};
+
 export default Map;

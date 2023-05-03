@@ -1,5 +1,4 @@
 import "./Navbar.css";
-import FavoritesButton from "./FavoritesButton";
 
 function Navbar() {
   return (
@@ -14,7 +13,6 @@ function Navbar() {
         src="./src/assets/supertitre.png"
         alt="wild-out"
       />
-      <FavoritesButton />
     </nav>
   );
 }
