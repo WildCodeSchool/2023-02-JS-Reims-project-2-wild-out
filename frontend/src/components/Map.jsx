@@ -1,5 +1,6 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import PropTypes from "prop-types";
 
 function Map({ events, setEvents }) {
   useEffect(() => {
@@ -13,35 +14,37 @@ function Map({ events, setEvents }) {
   }, []);
 
   return (
-    <div className="App">
-      <MapContainer center={[49.256948, 4.019683, -0.09]} zoom={13}>
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        {events.map((event) => (
+    <MapContainer center={[49.256948, 4.019683]} zoom={13}>
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      {events.map((event) => {
+        const { fields } = event.record;
+        return (
           <Marker
-            key={event.record.id}
+            key={fields.id}
             position={[
-              event.record.fields.location_coordinates.lat,
-              event.record.fields.location_coordinates.lon,
+              fields.location_coordinates.lat,
+              fields.location_coordinates.lon,
             ]}
           >
             <Popup>
-              <h3>{event.record.fields.title_fr}</h3>
-              <h4>{event.record.fields.location_address}</h4>
-              <p>{event.record.fields.description_fr}</p>
-              <img
-                src={event.record.fields.image}
-                width={200}
-                alt={event.record.fields.title_fr}
-              />
+              <h3>{fields.title_fr}</h3>
+              <h4>{fields.location_address}</h4>
+              <p>{fields.description_fr}</p>
+              <img src={fields.image} width={200} alt={fields.title_fr} />
             </Popup>
           </Marker>
-        ))}
-      </MapContainer>
-    </div>
+        );
+      })}
+    </MapContainer>
   );
 }
+
+Map.propTypes = {
+  events: PropTypes.arrayOf(PropTypes.string).isRequired,
+  setEvents: PropTypes.func.isRequired,
+};
 
 export default Map;

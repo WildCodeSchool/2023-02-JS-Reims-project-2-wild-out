@@ -1,6 +1,20 @@
+import React from "react";
+import PropTypes from "prop-types";
 import "./ApiEvent.css";
 
-function ApiEvent({ events, setEvents }) {
+function ApiEvent(props) {
+  const { events, setEvents } = props;
+
+  const fetchEvent = () => {
+    fetch(
+      "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records"
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setEvents(data);
+      });
+  };
+
   return (
     <div className="button_scroll">
       <button type="button" onClick={fetchEvent} id="buttonScrollEvents">
@@ -20,5 +34,10 @@ function ApiEvent({ events, setEvents }) {
     </div>
   );
 }
+
+ApiEvent.propTypes = {
+  events: PropTypes.arrayOf(PropTypes.string).isRequired,
+  setEvents: PropTypes.func.isRequired,
+};
 
 export default ApiEvent;
