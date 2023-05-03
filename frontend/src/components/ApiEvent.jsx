@@ -26,8 +26,8 @@ function ApiEvent() {
         events.records.map((event) => (
           <p key={event.record.id}>
             {event.record.fields.title_fr} (lon:
-            {event.record.fields.location_coordinates.lon}/ lat:
-            {event.record.fields.location_coordinates.lat})
+            {event.record.fields.location_coordinates.lon}
+            {event.record.fields.location_coordinates.lat}
           </p>
         ))}
     </div>
