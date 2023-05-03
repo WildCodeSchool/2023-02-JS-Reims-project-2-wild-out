@@ -16,7 +16,7 @@ function Map() {
 
   return (
     <div className="App">
-      <MapContainer center={[49.256948, 4.019683, -0.09]} zoom={13}>
+      <MapContainer center={[48.866667, 2.333333, -0.09]} zoom={13}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
