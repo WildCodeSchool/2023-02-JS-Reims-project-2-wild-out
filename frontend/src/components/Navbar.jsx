@@ -14,6 +14,10 @@ function Navbar() {
         src="./src/assets/supertitre.png"
         alt="wild-out"
       />
+
+      <div className="phrase">
+        <h1> Que souhaitez-vous faire aujourd'hui ?</h1>
+      </div>
       <FavoritesButton />
     </nav>
   );

@@ -1,19 +1,7 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
-function Map() {
-  const [events, setEvents] = useState([]);
-
-  useEffect(() => {
-    fetch(
-      "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records?start=0&rows=100"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setEvents(data.records);
-      });
-  }, []);
-
+function Map({ events }) {
   return (
     <div className="App">
       {/* coordinates map display Paris */}
@@ -46,4 +34,25 @@ function Map() {
     </div>
   );
 }
+
+Map.propTypes = {
+  events: PropTypes.arrayOf(
+    PropTypes.shape({
+      record: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        fields: PropTypes.shape({
+          location_coordinates: PropTypes.shape({
+            lat: PropTypes.number.isRequired,
+            lon: PropTypes.number.isRequired,
+          }).isRequired,
+          title_fr: PropTypes.string.isRequired,
+          location_address: PropTypes.string.isRequired,
+          description_fr: PropTypes.string.isRequired,
+          image: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+    })
+  ).isRequired,
+};
+
 export default Map;
