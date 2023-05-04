@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 function Map({ events }) {
   return (
     <MapContainer
-      center={[49.256948, 4.019683]}
-      zoom={13}
+      center={[48.866667, 2.333333, -0.09]} /* coordinates map display Paris */
+      zoom={11}
       style={{ flexGrow: 1, minHeight: "initial" }}
     >
       <TileLayer
@@ -35,7 +35,6 @@ function Map({ events }) {
     </MapContainer>
   );
 }
-
 Map.propTypes = {
   events: PropTypes.arrayOf(
     PropTypes.shape({
@@ -55,5 +54,4 @@ Map.propTypes = {
     })
   ).isRequired,
 };
-
 export default Map;
