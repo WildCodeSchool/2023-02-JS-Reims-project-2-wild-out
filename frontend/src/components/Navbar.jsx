@@ -1,5 +1,4 @@
 import "./Navbar.css";
-import FavoritesButton from "./FavoritesButton";
 
 function Navbar() {
   return (
@@ -18,7 +17,6 @@ function Navbar() {
       <div className="phrase">
         <h1> Que souhaitez-vous faire aujourd'hui ?</h1>
       </div>
-      <FavoritesButton />
     </nav>
   );
 }

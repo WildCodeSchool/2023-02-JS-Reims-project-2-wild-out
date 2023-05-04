@@ -32,7 +32,9 @@
 }
 
 .phrase {
-  color: rgba(3, 26, 30, 0.735);
-  text-shadow: 2px 2px 5px white;
+  color: rgba(3, 19, 22, 0.749);
+  text-shadow: 2px 2px 5px rgb(202, 223, 86);
   background-color: rgba(196, 239, 204, 0.523);
+  border-radius: 35%;
+  size: 20rem;
 }
