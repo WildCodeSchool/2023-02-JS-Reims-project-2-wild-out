@@ -9,8 +9,9 @@ function ApiEvent({ events }) {
     <details className="textEventList" onToggle={() => setOpen(!isOpen)}>
       {events.map((event) => (
         <p className="eventNew" key={event.record.id}>
-          {event.record.fields.title_fr} ({event.record.fields.location_address}
-          )
+          {event.record.fields.title_fr} <br />(
+          {event.record.fields.description_fr})<br />(
+          {event.record.fields.location_address})
         </p>
       ))}
       <summary id="buttonScrollEvents" className={isOpen ? "open" : "close"}>
