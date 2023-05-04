@@ -16,8 +16,23 @@
   height: 3rem;
   width: 3rem;
 }
-
 .wildout {
   height: 3rem;
   width: 10rem;
+}
+@media screen and (min-width: 700px) {
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+  .wildout {
+    height: 100px;
+    width: 260px;
+  }
+}
+
+.phrase {
+  color: rgba(3, 26, 30, 0.735);
+  text-shadow: 2px 2px 5px white;
+  background-color: rgba(196, 239, 204, 0.523);
 }

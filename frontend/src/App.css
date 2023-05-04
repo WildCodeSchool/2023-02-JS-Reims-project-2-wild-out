@@ -30,7 +30,7 @@ code {
   color: black;
   font-size: 2.5em;
   font-weight: 700;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: "lato", sans-serif;
 }
 
 .case {
@@ -102,7 +102,8 @@ code {
     align-items: center;
   }
   .case {
-    width: 100px;
+    width: 80px;
+    height: 80px;
   }
   .Temp {
     width: 20px;
@@ -120,6 +121,12 @@ code {
   .meteoFigure {
     display: flex;
     flex-direction: column;
+  }
+  .button_favorites {
+    display: flex;
+    align-items: flex-end;
+    width: 15px;
+    height: 15px;
   }
 
   .Allsite {

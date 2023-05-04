@@ -6,7 +6,7 @@ const events = require("./data/events.json");
 
 const itemControllers = require("./controllers/itemControllers");
 
-router.get("/events.json", (req, res) => {
+router.get("/events", (req, res) => {
   res.json(events);
 });
 
