@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import PropTypes from "prop-types";
 import FavoritesButton from "./FavoritesButton";
 
 function Navbar({ onSearch }) {
+  const [address, setAddress] = useState("");
+
   const handleSearch = (event) => {
     event.preventDefault();
-    const input = document.getElementById("search-bar");
-    const address = input.value;
-    input.value = "";
     onSearch(address);
+    setAddress("");
+  };
+
+  const handleChange = (event) => {
+    setAddress(event.target.value);
   };
 
   return (
@@ -28,7 +32,13 @@ function Navbar({ onSearch }) {
       <div className="phrase">
         <form onSubmit={handleSearch}>
           <h1> Que souhaitez-vous faire aujourd'hui ?</h1>
-          <input type="text" id="search-bar" placeholder="Rechercher un lieu" />
+          <input
+            type="text"
+            id="search-bar"
+            placeholder="Rechercher un lieu"
+            value={address}
+            onChange={handleChange}
+          />
           <button type="submit">Chercher</button>
         </form>
       </div>
