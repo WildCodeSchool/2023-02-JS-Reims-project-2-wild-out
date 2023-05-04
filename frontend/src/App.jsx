@@ -11,26 +11,38 @@ function App() {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    fetch(
-      "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records?start=0&rows=100"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setEvents(data.records);
-      });
-
-    fetch(
-      "https://api.open-meteo.com/v1/forecast?latitude=49.27&longitude=4.03&hourly=temperature_2m"
-    )
-      .then((response) => response.json())
-      .then((data) => {
+    Promise.all([
+      fetch(
+        "https://api.open-meteo.com/v1/forecast?latitude=49.27&longitude=4.03&hourly=temperature_2m"
+      ),
+      fetch(
+        "https://public.opendatasoft.com/api/v2/catalog/datasets/evenements-publics-openagenda/records?start=0&rows=100"
+      ),
+    ])
+      .then(
+        (responses) => Promise.all(responses.map((response) => response.json())) // extraire tous les JSON
+      )
+      .then(([dataMeteo, dataEvents]) => {
         // extract current hour and filter the data for the current hour only
         const currentHour = new Date().getHours();
-        const filteredData = data.hourly.time.filter(
+        const filteredData = dataMeteo.hourly.time.filter(
           (time) => new Date(time).getHours() === currentHour
         );
-        setFetchedData(data);
+        setFetchedData(dataMeteo);
         setTodaysData(filteredData);
+
+        setEvents(dataEvents.records);
+
+        const isSunny = dataMeteo.hourly.temperature_2m[0] > 20;
+
+        const eventsFiltered = dataEvents.records.filter((event) =>
+          event.record.fields.description_fr
+            .concat(...(event.record.fields.keywords_fr ?? []))
+            .match(
+              isSunny ? /concert|fete|conférence/ : /atelier|cuisine|musée/
+            )
+        );
+        setEvents(eventsFiltered);
       });
   }, []);
 
