@@ -3,38 +3,38 @@ import PropTypes from "prop-types";
 
 function Map({ events }) {
   return (
-    <div className="App">
-      {/* coordinates map display Paris */}
-      <MapContainer center={[48.866667, 2.333333, -0.09]} zoom={11}>
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        {events.map((event) => (
-          <Marker
-            key={event.record.id}
-            position={[
-              event.record.fields.location_coordinates.lat,
-              event.record.fields.location_coordinates.lon,
-            ]}
-          >
-            <Popup>
-              <h3>{event.record.fields.title_fr}</h3>
-              <h4>{event.record.fields.location_address}</h4>
-              <p>{event.record.fields.description_fr}</p>
-              <img
-                src={event.record.fields.image}
-                width={200}
-                alt={event.record.fields.title_fr}
-              />
-            </Popup>
-          </Marker>
-        ))}
-      </MapContainer>
-    </div>
+    <MapContainer
+      center={[48.866667, 2.333333, -0.09]} /* coordinates map display Paris */
+      zoom={11}
+      style={{ flexGrow: 1, minHeight: "initial" }}
+    >
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      {events.map((event) => (
+        <Marker
+          key={event.record.id}
+          position={[
+            event.record.fields.location_coordinates.lat,
+            event.record.fields.location_coordinates.lon,
+          ]}
+        >
+          <Popup>
+            <h3>{event.record.fields.title_fr}</h3>
+            <h4>{event.record.fields.location_address}</h4>
+            <p>{event.record.fields.description_fr}</p>
+            <img
+              src={event.record.fields.image}
+              width={200}
+              alt={event.record.fields.title_fr}
+            />
+          </Popup>
+        </Marker>
+      ))}
+    </MapContainer>
   );
 }
-
 Map.propTypes = {
   events: PropTypes.arrayOf(
     PropTypes.shape({
@@ -54,5 +54,4 @@ Map.propTypes = {
     })
   ).isRequired,
 };
-
 export default Map;
