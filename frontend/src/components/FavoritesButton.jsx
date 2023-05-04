@@ -2,8 +2,7 @@ import { useState } from "react";
 import "./FavoritesButton.css";
 
 function FavoritesButton() {
-  const [favorites, setFavorites] = useState(false);
-  const [tab, setTab] = useState([]);
+  const [favorites, setFavorites] = useState(null);
 
   const fetchFavorites = () => {
     fetch(
@@ -11,9 +10,8 @@ function FavoritesButton() {
     )
       .then((response) => response.json())
       .then((data) => {
-        setTab(data.records);
+        setFavorites(data);
       });
-    setFavorites(!favorites);
   };
 
   return (
@@ -24,8 +22,8 @@ function FavoritesButton() {
           alt="heartClickable"
         />
       </button>
-      {favorites === true &&
-        tab.map((event) => (
+      {favorites &&
+        favorites.records.map((event) => (
           <p key={event.record.id}>{event.record.fields.title_fr}</p>
         ))}
     </div>

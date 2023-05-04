@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import ApiEvent from "@components/ApiEvent";
+import ApiEvent from "./components/ApiEvent";
 import Meteo from "./components/Meteo";
 import Map from "./components/Map";
 import Navbar from "./components/Navbar";
