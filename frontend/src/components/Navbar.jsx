@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import PropTypes from "prop-types";
+import FavoritesButton from "./FavoritesButton";
 
 function Navbar({ onSearch }) {
   const [address, setAddress] = useState("");
@@ -41,6 +42,8 @@ function Navbar({ onSearch }) {
           <button type="submit">Chercher</button>
         </form>
       </div>
+
+      <FavoritesButton />
     </nav>
   );
 }
