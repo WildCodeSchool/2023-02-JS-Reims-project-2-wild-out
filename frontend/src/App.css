@@ -103,9 +103,8 @@ code {
     flex-direction: column;
   }
   .case {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 20px;
+    width: 100px;
+    height: 100px;
   }
   .Temp {
     width: 20px;

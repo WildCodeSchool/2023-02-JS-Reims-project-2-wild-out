@@ -16,7 +16,11 @@ function FavoritesButton() {
 
   return (
     <div className="button_favorites">
-      <button type="button" onClick={fetchFavorites} id="favoritesButton">
+      <button
+        type="button"
+        onClick={fetchFavorites}
+        className="favoritesButton"
+      >
         <img
           src=".\src\assets\favorite-white-heart-48.png"
           alt="heartClickable"

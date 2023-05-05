@@ -1,4 +1,4 @@
-#favoritesButton {
+.favoritesButton {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,10 +10,7 @@
   margin-right: 20px;
 }
 @media screen and (max-width: 700px) {
-  #favoritesButton {
-    width: 32px;
-    height: 32px;
-    padding: 7px;
-    margin-right: 10px;
+  .favoritesButton {
+    display: none;
   }
 }
