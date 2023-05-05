@@ -92,6 +92,13 @@ code {
     rgba(54, 216, 202, 1) 100%
   );
 }
+.phrase {
+  display: initial;
+}
+
+#titreacroche {
+  display: initial;
+}
 
 @media screen and (max-width: 700px) {
   .AppMeteo {
@@ -125,7 +132,7 @@ code {
     align-items: center;
   }
   .button_favorites {
-    display: flex;
+    display: none;
     align-items: flex-end;
     width: 15px;
     height: 15px;
@@ -134,4 +141,11 @@ code {
   .Allsite {
     flex-direction: column;
   }
+}
+.phrase {
+  display: none;
+}
+
+#titreacroche {
+  display: none;
 }
