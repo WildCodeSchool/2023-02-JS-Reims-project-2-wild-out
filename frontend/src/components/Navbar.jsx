@@ -28,10 +28,9 @@ function Navbar({ onSearch }) {
         src="./src/assets/supertitre.png"
         alt="wild-out"
       />
-
+      <h1 id="titreaccroche"> Que souhaitez-vous faire aujourd'hui ?</h1>
       <div className="phrase">
         <form onSubmit={handleSearch}>
-          <h1> Que souhaitez-vous faire aujourd'hui ?</h1>
           <input
             type="text"
             id="search-bar"
