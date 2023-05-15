@@ -1,44 +1,24 @@
+![superlogo](https://github.com/zeitounmax/WildOut/assets/120447954/28cb10b2-f5cb-4342-8c2c-635c3c91b7ea)
+
+
 ## Concept
 
-This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
-It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.
+WildOut is a project realized within the framework of the Wild Code School Project 2. You don't know what to do today? What if you look at the events in your city taking into account the weather? That's where WildOut comes in. Thanks to our APIs and a bit of logic, we were able to set up a system so that WildOut shows you the right events based on the weather. 
 
-## Setup & Use
+## We Use: 
+- For the project we used ReactJS , ExpressJS and Node for the functioning of the project. 
+- The APIs used are OpenEvent,OpenWeather
+- And for the map, we used ReactLeafLet and data from OpenStreetMap.
 
-### Project Initialization
+## How to use it? 
+For the use of the project 
+- Clone the project
+- Get the nodes modules with 	```npm install	``` . 
+- Start the server with 	```npm run dev	```
 
-- In VSCode, install plugins **Prettier - Code formatter** and **ESLint** and configure them
-- Clone this repo, enter it
-- If you are using `yarn` or `pnpm`, adapt the `config/cli` in `package.json`
-- Run command `npm install`
-- _NB: To launch the backend server, you'll need an environment file with database credentials. You'll find a template one in `backend/.env.sample`_
+## The Team : 
 
-### Available Commands
-
-- `migrate` : Run the database migration script
-- `dev` : Starts both servers (frontend + backend) in one terminal
-- `dev-front` : Starts the React frontend server
-- `dev-back` : Starts the Express backend server
-- `lint` : Runs validation tools, and refuses unclean code (will be executed on every _commit_)
-- `fix` : Fixes linter errors (run it if `lint` growls on your code !)
-
-## FAQ
-
-### Tools
-
-- _Concurrently_ : Allows for several commands to run concurrently in the same CLI
-- _Husky_ : Allows to execute specific commands that trigger on _git_ events
-- _Vite_ : Alternative to _Create-React-App_, packaging less tools for a more fluid experience
-- _ESLint_ : "Quality of code" tool, ensures chosen rules will be enforced
-- _Prettier_ : "Quality of code" tool as well, focuses on the styleguide
-- _ Airbnb Standard_ : One of the most known "standards", even though it's not officially linked to ES/JS
-- _Nodemon_ : Allows to restart the server everytime a .js file is udated
-
-### Deployment
-
-For deployment, you have to go to `secrets` → app `actions` on the github repo to insert via `New repository secret` :
-
-- CAPROVER_BACK_APPNAME : name app on caprover
-- CAPROVER_FRONT_APPNAME : name app on caprover
-- CAPROVER_PASSWORD : password caprover
-- CAPROVER_SERVER : link of domain
+- Elodie0530 : https://github.com/Elodie0530
+- Mohamed4900 : https://github.com/Mohamed4900
+- Ahmedelamri : https://github.com/ahmedelamri
+- Nayxl :       https://github.com/Nayxl
